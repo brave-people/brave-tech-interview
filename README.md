@@ -7,7 +7,8 @@
 ![Last commit](https://img.shields.io/github/last-commit/brave-people/Dev-Event?style=flat-square)
 
 
-핵심을 질문하다. 그리고 용감하게 대답하다.
+핵심을 질문하다. 그리고 용감하게 대답하다. <br />
+현직자가 해설해주는 기술면접
 
 </div>
 
@@ -27,3 +28,10 @@
 	- [면접 전 체크리스트](./contents/before30mins.md)
 	- [머리 식히기 위한 글](./contents/source.md)
 
+<br />
+<br />
+<div align=center>
+  <hr />
+    <h3> 용감한 친구들 with 남송리 삼번지 </h3>
+  <hr />
+</div>
