@@ -4,7 +4,12 @@
 
 ### CSRF에 대해서 설명하세요
 
+```
 
+```
+
+<br />
+<br />
 
 ### XSS에 대해서 설명하시오
 
@@ -29,12 +34,19 @@
 	 - 쿠키를 사용하는 요청은 서버 단에서 검증하는 로직을 꼭 마련해두는 것이 좋다.
 	 - HTTPS를 이용해서 통신 하는 것이 좋다.
 
-- [참고](https://github.com/WeareSoft/tech-interview/blob/master/contents/security.md)
+> Ref. [XSS 공격 Github. WeareSoft](https://github.com/WeareSoft/tech-interview/blob/master/contents/security.md)
 
+<br />
+<br />
 
 ### 공개키, 비공개키 방식에 대해서 설명하시오.
 
+```
 
+```
+
+<br />
+<br />
 
 ### 해쉬 함수의 특징
 
@@ -44,9 +56,10 @@
 - 해쉬 결과값으로 입력값을 계산하는 것은 불가능 하다.
 - 동일한 해쉬값을 가지는 서로 다른 메시지 쌍이 없다.
 
-- 참고
-  - [Link](https://www.rootca.or.kr/kor/notice/faqView.jsp?id=308)
+> Ref. [해쉬알고리즘이란 무엇이며 해쉬함수의 특징과 종류에는 어떠한 것들이 있나요? Kisa](https://www.rootca.or.kr/kor/notice/faqView.jsp?id=308)
   
+<br />
+<br />
 
 ### 알고있는 암호화 알고리즘에 대해서 설명하시오 
 
@@ -62,20 +75,26 @@
 MD-1, MD-5 해쉬 알고리즘을 언급하면 안됨. 
 단 모바일 실시간 게임 과 같이 연산량과 처리량, 실시간이 중요한 경우 MD-5를 사용할 수 있다고 언급 
 
-- [Link](https://brownbears.tistory.com/73)
+>  Ref. [AES와 SHA차이. Tistory brownbears](https://brownbears.tistory.com/73)
+
+<br />
+<br />
 
 ### SSL에 대해서 설명하세요
 
+```
+
+```
+
+<br />
+<br />
 
 ### 방화벽이란? 라우터와 방화벽의 차이
 
+```
 
-###
+```
 
-
-###
-
-
-###
-
+<br />
+<br />
 

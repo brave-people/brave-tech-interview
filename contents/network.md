@@ -8,6 +8,9 @@
 
 ```
 
+<br />
+<br />
+
 
 ### HTTP 메소드에 대해서 설명하세요.
 
@@ -57,7 +60,12 @@ Source. [Link](https://www.popit.kr/%EB%82%98%EB%A7%8C-%EB%AA%A8%EB%A5%B4%EA%B3%
 
 ### HTTP 응답코드에 대해서 설명하세요.
 
+```
 
+```
+
+<br />
+<br />
 
 
 ### URL 에 www.example.com 을 쳤을 때 일어나는 일들을 설명하세요.
@@ -84,6 +92,8 @@ Source. [Link](https://www.popit.kr/%EB%82%98%EB%A7%8C-%EB%AA%A8%EB%A5%B4%EA%B3%
 
 ```
 
+<br />
+<br />
 
 
 ### 쿠키와 세션은 언제 사용하나요?
@@ -91,6 +101,9 @@ Source. [Link](https://www.popit.kr/%EB%82%98%EB%A7%8C-%EB%AA%A8%EB%A5%B4%EA%B3%
 ```
 
 ```
+
+<br />
+<br />
 
 ### 파생문제
 - 쿠키와 세션의 차이
@@ -114,17 +127,27 @@ Source. [Link](https://www.popit.kr/%EB%82%98%EB%A7%8C-%EB%AA%A8%EB%A5%B4%EA%B3%
 
 ```
 
+<br />
+<br />
+
 
 ### Web으로 Server Push를 구현할 때 제약사항 등을 설명하세요.
 
-- TODO
+```
 
+```
+
+<br />
+<br />
 
 ### 3 way hand shake에 대해서 설명하세요.
 
 ```
 
 ```
+
+<br />
+<br />
 
 
 ### 4 way hand shake에 대해서 설명하세요.
@@ -133,12 +156,17 @@ Source. [Link](https://www.popit.kr/%EB%82%98%EB%A7%8C-%EB%AA%A8%EB%A5%B4%EA%B3%
 
 ```
 
+<br />
+<br />
 
 ### 흐름제어, 혼잡제어방식에 대해서 설명하세요.
 
 ```
 
 ```
+
+<br />
+<br />
 
 ------
 
@@ -150,9 +178,15 @@ Source. [Link](https://www.popit.kr/%EB%82%98%EB%A7%8C-%EB%AA%A8%EB%A5%B4%EA%B3%
 
 ```
 
+<br />
+<br />
+
 
 ### 브라운이 새로운 검색 엔진을 개발하려고 합니다. 어떻게 설계 및 개발 것인지 아는 지식을 모두 동원하여 설명하세요.
 
 ```
 
 ```
+
+<br />
+<br />

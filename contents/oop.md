@@ -5,16 +5,22 @@
 
 ### 디자인 패턴이란?
 
+```
 
+```
+
+<br />
+<br />
 
 ### 싱글톤이란?
 
 어떤 클래스의 인스턴스 개수가 최대 한 개를 넘지 않도록 하는 패턴 
 
+<br />
+<br />
 
 
 ### SOLID원칙에 대해서 설명하세요
-
 
 - SRP(Single Responsibility Principle) : 단일 책임 원칙, 저의 개인 답변과 같습니다.
 
@@ -29,12 +35,18 @@
 - DIP(Dependency Inversion Principle) : 의존 관계 역전의 원칙입니다. 구조적 디자인에서 발생하던 하위 레벨 모듈의 변경이 상위 레벨 모듈의 변경을 요구하는 위계관계를 끊는 의미의 역전입니다. 쉽게 말하면 코드에서는 인터페이스에서 구현하는 클래스로 그 의존 관계가 흐르지만 실행시에는 역전된다 정도로 생각하시면 되겠습니다.
 
 
-- 아래에 자세한 설명
-  - [Link](https://dev-momo.tistory.com/entry/SOLID-%EC%9B%90%EC%B9%99)
-  - [Link](https://gurumee92.tistory.com/95)
-  
+> Ref. 
+> [SOLID 원칙. Tistory dev-momo](https://dev-momo.tistory.com/entry/SOLID-%EC%9B%90%EC%B9%99), 
+> [2018년 하반기 'ㅈ' 기업 개발자 면접](https://gurumee92.tistory.com/95)
+
+<br />
+<br />
   
 ### MVC 패턴이란?
 
 #사용시 장점 #언제 사용하는지
+
+
+<br />
+<br />
 
