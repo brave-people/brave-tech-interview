@@ -1,6 +1,6 @@
 <div align=center>
 
-<img src="_raw/google.png" />
+<img src="_raw/google-flat.png" />
 
 # BRAVE Tech Interview
 
