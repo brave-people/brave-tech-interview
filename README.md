@@ -1,5 +1,7 @@
 <div align=center>
 
+<img src="_raw/google.png" />
+
 # BRAVE Tech Interview
 
 [![author](https://img.shields.io/badge/author-covenant-brightgreen.svg?style=flat-square)](https://covenant.tistory.com/)
@@ -8,7 +10,7 @@
 
 
 핵심을 질문하다. 그리고 용감하게 대답하다. <br />
-현직자가 해설해주는 기술면접
+현직자가 국내 IT기업부터 실리콘벨리 기술면접 문제를 해설해드립니다.
 
 </div>
 
