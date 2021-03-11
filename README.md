@@ -7,7 +7,6 @@
 [![author](https://img.shields.io/badge/author-covenant-brightgreen.svg?style=flat-square)](https://covenant.tistory.com/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/brave-people/Dev-Event/pulls)
 ![Last commit](https://img.shields.io/github/last-commit/brave-people/Dev-Event?style=flat-square)
-[![HitCount](http://hits.dwyl.com/brave-people/brave-tech-interview.svg)](http://hits.dwyl.com/brave-people/brave-tech-interview)
 
 핵심을 질문하다. 그리고 용감하게 대답하다. <br />
 현직자가 국내 IT기업부터 실리콘벨리 기술면접 문제를 해설해드립니다.
