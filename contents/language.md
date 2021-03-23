@@ -149,6 +149,72 @@ a instanceof b
 
 <br />
 
+----------------------------------------
+
+### [Java] static method는 Overriding이 가능할까요? Overload가 가능할까요?
+
+<details>
+   <summary> 예비 답안 보기 (👈 Click)</summary>
+
+<br />
+
+- static method의 Overload는 가능하다.
+- static method의 Overriding은 불가능하다. 
+   - 직관적으로 `RegularEmployee.getSalary()`를 호출했을 때 `Employee`의 `getSalary()`를 호출할지 `RegularEmployee`의 `getSalary()`를 호출할지 모호합니다.
+   - 자바에서 메소드 오버라이딩이란, 상속의 관계에 있는 클래스 간에 하위 클래스가 상위 클래스와 '완전 동일한 메소드'를 덮어쓴다.
+   - static 메소드는 인스턴스의 메소드가 아니라 클래스의 메소드이다. JVM에서 전역적으로 관리한다.
+   - 루비의 경우 클래스 메소드를 오버라이딩 할 수 있다. 
+
+<br />
+
+#### Java에서 static method를 Overriding하는 방법
+
+```java
+class Animal {
+    public static void eat() {
+        System.out.println("Animal Eating");
+    }
+}
+
+class Dog extends Animal{
+    public static void eat() {
+        System.out.println("Dog Eating");
+    }
+}
+
+class Test {
+    public static void main(String args[]) {
+       Animal obj= new Dog();  //Dog 오브젝트가 생성됩니다.
+       obj.eat();              //Dog Eating이 출력될까요?
+    }
+}
+```
+``` text
+Animal Eating
+```
+
+- 위의 코드는 static method를 object에서 호출하는 이상한 코드입니다.
+- static method를 Overriding하였지만 컴파일 에러가 나지 않습니다. 
+- eat method에 static 키워드가 없다면 `Dog Eating`를 출력하곘지만 위의 코드는 `Animal Eating`을 출력합니다.
+
+
+<br />
+<br />
+
+
+Ref.
+<a href="https://stackoverflow.com/questions/2223386/why-doesnt-java-allow-overriding-of-static-methods"> StackOverflow. Why doesn't Java allow overriding of static methods?
+ </a>
+
+
+<br />
+
+</details>
+
+----------------------------------------
+
+<br />
+
 ### interface와 abstract에 대해서 설명하세요.
 
 ```
