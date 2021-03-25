@@ -24,6 +24,7 @@
 ### [5. 네트워크](./contents/network.md)
 ### [6. 운영체제](./contents/os.md)
 ### [7. 보안](./contents/security.md)
+### [8. 소프트웨어공학](./contents/software_engineering.md)
 
 <br />
 
