@@ -19,28 +19,30 @@
 ## 감사합니다.
 
 <div align=center>
-  <img src="../_raw/uv.png">
-Github Traffic: Y축 UV(Unique Visitors)
-</div>
+  <img src="./_raw/uv.png">
 <br />
-
+Github Traffic: Y축 UV(Unique Visitors) <br />
+<br />
 빠른시간 많은 분들이 방문 및 스타를 눌러주셨습니다. 감사합니다. <br />
 Brave Tech Interview는 매주 국내 IT기업 면접문제 및 실리콘 벨리 문제와 해설을 업데이트 중입니다. <br />
 PR 및 리뷰 환영합니다 :)
 
+</div>
+<br />
 <br />
 <br />
 
 ------------------------
 
 <details>
-   <summary> FAQ. 면접제는 어디서 얻은 것인가요?  </summary>
+   <summary> <b>FAQ.</b> 실제 면접문제인가요?  </summary>
 
 <div align=center>
-  <img src="../_raw/trello.png">
+  <img src="./_raw/trello.png">
 </div>
 <br />
 
+- 아닌 문제도 있고, 변형된 문제도 있습니다. 다만 아닌 문제의 경우 (연습) 테그를 달 예정입니다. 특별한 테그가 없다면 실제 면접문제입니다.
 - 대기업 IT 면접 문제를 모아놓은 작년초 생활코딩 페이스북 페이지에 소개된 Trello에서 많이 참고하였습니다.
 - 블라인드 & 잡플래닛 면접 후기 & 블로그 합격 수기에서 문제를 참고하였습니다.
 - 최근에는 프로그래머스 테크피드에 올라오는 면접 후기글을 많이 참고합니다.
@@ -51,7 +53,7 @@ PR 및 리뷰 환영합니다 :)
 ------------------------
 
 <details>
-   <summary> FAQ. 왜 현직자분들이 maintainer로 기술면접 저장소을 만들어가시나요? </summary>
+   <summary> <b>FAQ.</b> 왜 현직자분들이 maintainer로 기술면접 저장소을 만들어가시나요? </summary>
 <br />
 
 - 🧓 지식을 함께 공유하며 함께 성장하고 싶어서 참여합니다.
