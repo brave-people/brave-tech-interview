@@ -8,7 +8,6 @@
 
 <details>
    <summary> 예비 답안 보기 (👈 Click)</summary>
-
 <br />
 
 - 동기 : call하고 응답이 올 때까지 기다렸다가 다음 로직을 실행한다.
@@ -179,7 +178,7 @@ public interface Person{
 
 // 사용
 public class Student implements Person{
-	private int score;              // 변수 선언
+  private int score;              // 변수 선언
   Student(int score){             // 생성자
     score = score;
   }                     
@@ -193,7 +192,7 @@ public class Student implements Person{
 }
 ```
 
-
+<br />
 
 #### 2) `abstract` 
 
