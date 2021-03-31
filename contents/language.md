@@ -148,6 +148,14 @@ a instanceof b
 
 <br />
 
+<br />
+
+<br />
+
+------
+
+
+
 ### interface와 abstract에 대해서 설명하세요.
 
 <details>
@@ -226,6 +234,10 @@ public class Student extends Person{
   }
 }
 ```
+
+
+
+------
 
 
 
