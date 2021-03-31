@@ -7,7 +7,7 @@
 - [WeareSoft/ tech-interview](https://github.com/WeareSoft/tech-interview)
 - [WooVictory/ Ready-For-Tech-Interview](https://github.com/WooVictory/Ready-For-Tech-Interview)
 - [gyoogle/ tech-interview-for-developer](https://github.com/gyoogle/tech-interview-for-developer)
-- [tvandame/ 백엔드 개발자 면접 문제 은행](https://github.com/tvandame/back-end-developer-interview-questions/blob/master/Translations/Korean/README_KR.md#csrc specific)
+- [tvandame/ 백엔드 개발자 면접 문제 은행](https://github.com/tvandame/back-end-developer-interview-questions/blob/master/Translations/Korean/README_KR.md)
 - [interview cake](https://www.interviewcake.com/)
 - [Trello/ 면접준비](https://trello.com/b/MugMXwGi/%EB%A9%B4%EC%A0%91%EC%A4%80%EB%B9%84%F0%9F%91%91)
 - [ksundong / backend-interview-question](https://github.com/ksundong/backend-interview-question)
