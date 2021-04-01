@@ -167,34 +167,32 @@ a instanceof b
 
 ✅ 무엇인가? 
 
-​	=> `자체로 객체 생성이 되며, only 선언들의 집합이다.` (그것도 추상 메서드, static, final 변수만)
+​	=> 추상 메서드, static, final 변수만 사용할 수 있는 객체로 생성이 되는 선언들의 집합이다.
 
 ✅ 왜 쓰는가?
 
-​	=> `다중 상속을 가능하게 해준다. (C++은 여러 클래스를 상속받을 수 있지만, Java는 하나의 클래스만 상속받을 수 있다.)`
+​	=> 다중 상속을 가능하게 해준다.
 
-​	=> `상속받는 클래스는 추상 클래스의 메서드 또는 변수가 있음을 보장한다.`
+​	제언 : **C++은 다중 상속이 가능하나 Java는 기본적으로 단일 상속만 허용한다. 하지만 인터페이스를 사용한다면 다중 상속을 할 수 있다.**
+
+​	=> 상속받는 클래스는 추상 클래스의 메서드 또는 변수가 있음을 보장한다.
 
 ✅ 어떻게 쓰나?
 
 ```java
 // 선언
 public interface Person{
-  public String name = "홍길동";    // 변수 선언 (final만 가능)
-  public void eat();              // 메서드 선언
+  public static final String name = "홍길동";    // 변수 선언 (public, static, final 생략해도 자동)
+  public void eat();                           // 메서드 선언
 }
 
 // 사용
 public class Student implements Person{
-  private int score;              // 변수 선언
-  Student(int score){             // 생성자
-    score = score;
-  }                     
   public void study(){            // 메서드 선언
-    
+    // some code here 
   }
   public void eat(){              // 오버라이딩
-    
+    // some code here 
   }
   
 }
@@ -206,15 +204,15 @@ public class Student implements Person{
 
 ✅ 무엇인가?
 
-​	=> `자체로는 객체 생성이 되지 않는, 상속을 받아 사용하는 클래스이다.`
+​	=> 자체로는 객체 생성이 되지 않는, 상속을 받아 사용하는 클래스이다.
 
 ✅ 왜 쓰는가?
 
-​	=> `코드를 공유할 수 있다.(추상 메서드 말고, 일반 메서드도 구현 가능하기 때문) `
+​	=> 추상 클래스는 일반 메서드를 구현할 수 있기 때문에 추상 클래스를 상속하는 클래스의 경우 추상클래스의 일반 메서드를 사용할 수 있다. 따라서 공통적으로 구현해야 하는 메소드의 경우 추상클래스의 일반 메소드에 구현하여 DRY 원칙을 지킬 수 있다.
 
-​	=> `상속받는 클래스는 추상 클래스의 메서드 또는 변수가 있음을 보장한다.` 
+​	=> 상속받는 클래스는 추상 클래스의 메서드 또는 변수가 있음을 보장한다.
 
-​	=> `non-static, non-final 변수를 사용할 수 있어 객체의 상태를 수정할 수 있다.`
+​	=> non-static, non-final 변수를 사용할 수 있어 객체의 상태를 수정할 수 있다.
 
 ✅ 어떻게 쓰나?
 
@@ -223,7 +221,7 @@ public class Student implements Person{
 public abstract class Person{
   public abstract void eat();  // 추상 메서드
   public void work(){	         // 일반 메서드
-    
+    // some code here 
   }
 }
 
