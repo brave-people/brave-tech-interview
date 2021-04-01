@@ -281,7 +281,7 @@ a instanceof b
 
 ----------------------------------------
 
-### interface와 abstract에 대해서 설명하세요.
+### interface와 abstract에 대해서 설명하세요. - 1편
 
 <details>
    <summary> 예비 답안 보기 (👈 Click)</summary>
@@ -366,8 +366,99 @@ public class Student extends Person{
 
 
 
+
+
+
+
+
+
+
 <br />
 <br />
+
+
+
+----------------------------------------
+
+### interface와 abstract에 대해서 설명하세요. - 2편
+
+<details>
+   <summary> 예비 답안 보기 (👈 Click)</summary>
+
+
+<br />
+
+**가장 큰 차이점은**
+
+인터페이스는 그 인터페이스를 구현하는 모든 구현체들은 인터페이스가 정의해둔 같은 기능을 구현하도록 강제 함에 있어 사용하며
+
+추상클래스는 상속받는 클래스들의 공통적인 로직을 추상화시키고, 자식클래스들이 부모클래스를 확장시키기위해 사용합니다.
+
+------
+
+**어떻게 활용?**
+
+```java
+interface Remocon {
+ public void on();
+  public void off();
+  public void upChannel();
+  public void downChannel();
+}
+
+public class LGSmartRemocon implements Remocon {
+  public void on() { 전원 켜짐 구현 }
+  public void off() { 전원 켜짐 구현 }
+  public void upChannel() { 채널 증가 구현 } 
+  public void downChannel() { 채널 감소 구현 }
+}
+
+public class SamsungSmartRemocon implements Remocon {
+  public void on() { 전원 켜짐 구현 }
+  public void off() { 전원 켜짐 구현 }
+  public void upChannel() { 채널 증가 구현 } 
+  public void downChannel() { 채널 감소 구현 }
+}
+```
+
+정부에서 리모콘의 스팩은 무조건 채널 전원켬, 끔, 채널 증가, 채널 감소가 있어야 전파인증을 내준다고 생각해 봅시다. 그러면 LG, Samsung은 Remocon 인터페이스를 만들고 무조건 채널 전원켬, 끔, 채널 증가, 채널 감소를 만들어야 할 것입니다.
+
+추상클래스 예제는 https://velog.io/@foeverna/Java-추상클래스-예제 이게 제일 좋네요!
+
+------
+
+**속성**
+
+1. 추상클래스는 **다중 상속이 불가하지만**, 인터페이스는 **다중 상속이 가능**하다.
+2. 추상클래스는 **상태와 행위**를 가지지만, 인터페이스는 **행위**만 가진다.
+
+인터페이스는 다중상속이 되고, 정의된 모든 행위를 구현해야하고요.
+
+2의 이유 때문에 interface는 static, final 변수만 가능할 것입니다.
+
+------
+
+**DI로 본 스프링과 인터페이스 이야기**
+
+- 스프링의 개념인 DI 에는 인터페이스를 주로 사용합니다.
+- 스프링은 DI 를 하기 위해, Bean Factory 기능을 확장하여 IoC 컨테이너인 Application Context 가 `싱글톤 레지스트리` 를 사용하고 있기 떄문입니다.
+- 싱글톤 레지스트리를 통해서 수 만개의 요청이 동시에 들어왔을 때 각 요청마다 새로운 객체 생성이 아닌 단일 객체를 사용하게 됩니다.
+- DI에 추상클래스를 사용한다면, DI 를 하는 대상이 상태 를 가지기 때문에 멀티 쓰레드 환경에서 Thread safe 하지 않게 됩니다.
+
+
+
+</details>
+
+
+----------------------------------------
+
+
+
+<br /><br />
+
+
+
+
 
 ### 쓰레드세이프란?
 
