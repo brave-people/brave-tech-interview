@@ -477,7 +477,7 @@ public class SamsungSmartRemocon implements Remocon {
 
 <br />
 
-cf) <a href="https://soooprmx.com/archives/11330" target='_blank'>언어를 스크립트 언어, 인터프리 언어로 구분하는 것이 옳은 방법일까?</a>
+cf) <a href="https://soooprmx.com/archives/11330" target='_blank'>언어를 스크립트 언어, 인터프리트 언어로 구분하는 것이 옳은 방법일까?</a>
 
 
 
