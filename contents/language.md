@@ -466,7 +466,7 @@ public class SamsungSmartRemocon implements Remocon {
    <summary> 예비 답안 보기 (👈 Click)</summary>
 <br />
 
-
+<br />
 
 |        | Java                                                         | Python                                                       |
 | ------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -475,13 +475,13 @@ public class SamsungSmartRemocon implements Remocon {
 | 자료형 | 정적유형 (타입선언 O)                                        | 동적유형 (타입선언 X)                                        |
 | 스레딩 | 스레드 생성 및 제어와 관련된 <br />라이브러리 API를 제공하고 있기 때문에, <br />운영체제에 상관없이 멀티 스레드를 구현할 수 있음. | 인터프리터 언어이기 때문에, 싱글 스레드 이며,<br />별도 모듈을 이용 해야함. |
 
-
+<br />
 
 cf) <a href="https://soooprmx.com/archives/11330" target='_blank'>언어를 스크립트 언어, 인터프리 언어로 구분하는 것이 옳은 방법일까?</a>
 
 
 
-
+<br />
 
 </details>
 
