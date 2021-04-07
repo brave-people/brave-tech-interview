@@ -115,14 +115,9 @@ __[1] 입출력장치 보호__
 - A가 프린터에 인쇄를 요청하여 프린터가 A의 작업을 수행 중일 때 B가 프린터 요청을 하면 A의 작업 이후에 B의  작업을 수행해야합니다.
 - 이와 관계된특권 명령(in, out) 명령은 에플리케이션에서 하는 것이 아닌 운영체제가 수행합니다. 
 
-- 공통점
-  
-  -  `key-value 쌍` 으로 데이터를 저장한다는 면에서는 동일하다.
-- 차이점
-   - HashTable: 멀티 스레드 환경에서 안전(thread safe)하게 객체를 추가, 삭제할 수 있다. 
-   -  HashMap: 빠른 대신에 동기화의 문제가 있으며 이를 해결하기 위한 두 가지 방법이 있다.
-      - `ConcurrentHashMap` 사용
-      - `Collections.synchronizedMap` 사용
+__[2] 메모리 보호__
+- A가 실행한 프로세스는 B가 실행한 프로세스의 메모리를 읽거나 쓰지 못하도록 막습니다.
+- CPU와 메모리 사이에 MMU(Memory Management Unit)두어서  base, limit 레지스터 값을 읽어서 해당 메모리 부분을 넘지 못하도록 합니다. 
 
 __[3] CPU 보호__
 - while ( n = 1) 과 같이 실수 혹은 고의로  하나의 프로세스가 CPU시간을 독점하는 일을 방지해야합니다.
@@ -154,12 +149,7 @@ Topic
 
 <br />
 
-
-
-<br />
-
-
-----------------------------------------
+-----------------------
 
 ### 함수호출과 시스템 콜의 차이에 대해서 설명하세요.
 
@@ -176,225 +166,16 @@ Topic
 
 <br />
 
-<br />
+-----------------------
 
-
-
-----------------------------------------
-
-### interface와 abstract에 대해서 설명하세요. - 1편
+### 인터럽트와 시스템 콜의 차이에 대해서 설명하세요.
 
 <details>
-   <summary> 예비 답안 보기 (👈 Click)</summary>
-
+   <summary> 읽기자료 보기 (👈 Click)</summary>
 <br />
 
-#### 1) `interface` 
-
-✅ 무엇인가? 
-
-​	=> 추상 메서드, static, final 변수만 사용할 수 있는 객체로 생성이 되는 선언들의 집합이다.
-
-✅ 왜 쓰는가?
-
-​	=> 다중 상속을 가능하게 해준다.
-
-​	제언 : **C++은 다중 상속이 가능하나 Java는 기본적으로 단일 상속만 허용한다. 하지만 인터페이스를 사용한다면 다중 상속을 할 수 있다.**
-
-​	=> 상속받는 클래스는 추상 클래스의 메서드 또는 변수가 있음을 보장한다.
-
-✅ 어떻게 쓰나?
-
-```java
-// 선언
-public interface Person{
-  public static final String name = "홍길동";    // 변수 선언 (public, static, final 생략해도 자동)
-  public void eat();                           // 메서드 선언
-}
-
-// 사용
-public class Student implements Person{
-  public void study(){            // 메서드 선언
-    // some code here 
-  }
-  public void eat(){              // 오버라이딩
-    // some code here 
-  }
-  
-}
-```
-
-<br />
-
-#### 2) `abstract` 
-
-✅ 무엇인가?
-
-​	=> 자체로는 객체 생성이 되지 않는, 상속을 받아 사용하는 클래스이다.
-
-✅ 왜 쓰는가?
-
-​	=> 추상 클래스는 일반 메서드를 구현할 수 있기 때문에 추상 클래스를 상속하는 클래스의 경우 추상클래스의 일반 메서드를 사용할 수 있다. 따라서 공통적으로 구현해야 하는 메소드의 경우 추상클래스의 일반 메소드에 구현하여 DRY 원칙을 지킬 수 있다.
-
-​	=> 상속받는 클래스는 추상 클래스의 메서드 또는 변수가 있음을 보장한다.
-
-​	=> non-static, non-final 변수를 사용할 수 있어 객체의 상태를 수정할 수 있다.
-
-✅ 어떻게 쓰나?
-
-```java
-// 선언
-public abstract class Person{
-  public abstract void eat();  // 추상 메서드
-  public void work(){	         // 일반 메서드
-    // some code here 
-  }
-}
-
-// 상속
-public class Student extends Person{
-  public void eat(){           // 오버라이딩
-    
-  }
-}
-```
-
-</details>
-
-
-----------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-<br />
-<br />
-
-
-
-----------------------------------------
-
-### interface와 abstract에 대해서 설명하세요. - 2편
-
-<details>
-   <summary> 예비 답안 보기 (👈 Click)</summary>
-
-
-<br />
-
-**가장 큰 차이점은**
-
-인터페이스는 그 인터페이스를 구현하는 모든 구현체들은 인터페이스가 정의해둔 같은 기능을 구현하도록 강제 함에 있어 사용하며
-
-추상클래스는 상속받는 클래스들의 공통적인 로직을 추상화시키고, 자식클래스들이 부모클래스를 확장시키기위해 사용합니다.
-
-------
-
-**어떻게 활용?**
-
-```java
-interface Remocon {
- public void on();
-  public void off();
-  public void upChannel();
-  public void downChannel();
-}
-
-public class LGSmartRemocon implements Remocon {
-  public void on() { 전원 켜짐 구현 }
-  public void off() { 전원 켜짐 구현 }
-  public void upChannel() { 채널 증가 구현 } 
-  public void downChannel() { 채널 감소 구현 }
-}
-
-public class SamsungSmartRemocon implements Remocon {
-  public void on() { 전원 켜짐 구현 }
-  public void off() { 전원 켜짐 구현 }
-  public void upChannel() { 채널 증가 구현 } 
-  public void downChannel() { 채널 감소 구현 }
-}
-```
-
-정부에서 리모콘의 스팩은 무조건 채널 전원켬, 끔, 채널 증가, 채널 감소가 있어야 전파인증을 내준다고 생각해 봅시다. 그러면 LG, Samsung은 Remocon 인터페이스를 만들고 무조건 채널 전원켬, 끔, 채널 증가, 채널 감소를 만들어야 할 것입니다.
-
-추상클래스 예제는 https://velog.io/@foeverna/Java-추상클래스-예제 이게 제일 좋네요!
-
-------
-
-**속성**
-
-1. 추상클래스는 **다중 상속이 불가하지만**, 인터페이스는 **다중 상속이 가능**하다.
-2. 추상클래스는 **상태와 행위**를 가지지만, 인터페이스는 **행위**만 가진다.
-
-인터페이스는 다중상속이 되고, 정의된 모든 행위를 구현해야하고요.
-
-2의 이유 때문에 interface는 static, final 변수만 가능할 것입니다.
-
-------
-
-**DI로 본 스프링과 인터페이스 이야기**
-
-- 스프링의 개념인 DI 에는 인터페이스를 주로 사용합니다.
-- 스프링은 DI 를 하기 위해, Bean Factory 기능을 확장하여 IoC 컨테이너인 Application Context 가 `싱글톤 레지스트리` 를 사용하고 있기 떄문입니다.
-- 싱글톤 레지스트리를 통해서 수 만개의 요청이 동시에 들어왔을 때 각 요청마다 새로운 객체 생성이 아닌 단일 객체를 사용하게 됩니다.
-- DI에 추상클래스를 사용한다면, DI 를 하는 대상이 상태 를 가지기 때문에 멀티 쓰레드 환경에서 Thread safe 하지 않게 됩니다.
-
-
-
-</details>
-
-
-----------------------------------------
-
-
-
-<br /><br />
-
-<br />
-
-----------------------------------------
-
-### Java vs Python 에 대해서 설명 해보세요.
-
-<details>
-   <summary> 예비 답안 보기 (👈 Click)</summary>
-<br />
-
-<br />
-
-|        | Java                                                         | Python                                                       |
-| ------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 메모리 | JVM에서 Garbage Collection을 수행하며,<br />대상은 heap영역. | [ Python Garbage Collection ]<br /><br />추가설명 필요.      |
-| 실행   | [작동 방식]<br /><br />1) `컴파일러` : 모든 소스코드(.java) => 바이트코드(.class) <br />2) `JVM` : 운영체제에 맞는 기계어로 변환 <br /><br />=> 컴파일 시간이 소요되지만, 실행 속도는 빠름. | [작동 방식]<br /><br />1) `Interpreter` : 한 줄씩 해석하여 실행<br /><br />=> 실행 단계에서 해석되기 때문에, 실행 속도는 느림.<br />(변수 타입을 명시하지 않기 때문에, 검사하여 값을 사용해야 함.) |
-| 자료형 | 정적유형 (타입선언 O)                                        | 동적유형 (타입선언 X)                                        |
-| 스레딩 | 스레드 생성 및 제어와 관련된 <br />라이브러리 API를 제공하고 있기 때문에, <br />운영체제에 상관없이 멀티 스레드를 구현할 수 있음. | 인터프리터 언어이기 때문에, 싱글 스레드 이며,<br />별도 모듈을 이용 해야함. |
-
-<br />
-
-cf) <a href="https://soooprmx.com/archives/11330" target='_blank'>언어를 스크립트 언어, 인터프리트 언어로 구분하는 것이 옳은 방법일까?</a>
-
-
-
-<br />
-
-</details>
-
-----------------------------------------
-
-<br />
-
-
-
-
-
-### 쓰레드세이프란?
+- [Leetcode](https://leetcode.com/discuss/interview-question/operating-system/124838/Interrupt-Vs-System-Call)
+- [Topcoder](https://accounts.topcoder.com/member?retUrl=https:%2F%2Fwww.topcoder.com%2Fsettings%2Fprofile&utm_source=community-app-main)
 
 </details>
 
