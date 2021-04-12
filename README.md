@@ -15,7 +15,27 @@
 <br />
 <br />
 
-## 🙏 감사합니다. 
+## 📣 공지: 코딩테스트 완벽 정복 로드맵 공개!
+
+<br />
+<div align=center>
+<img src="https://github.com/KoEonYack/Tistory-Coveant/blob/master/Article/Note/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%8B%9C%EC%9E%91%EC%9D%84%EC%9C%84%ED%95%9C_%EB%B0%B1%EC%A4%80%EB%AC%B8%EC%A0%9C_%EC%B6%94%EC%B2%9C/img/map_simple.png?raw=true" align="center" style="display: block; margin: 0px auto; display: block; height: auto; border:1px solid #eaeaea; padding: 0px;" width="" >
+<br />
+
+<center> <a href="https://covenant.tistory.com/235"> 로드맵 보러가기! </a> </center>
+
+<br />
+
+취준을 위한 코딩테스트 공부가 막막하다면? <br />
+Brave Tech Interview Maintainer인 Covenat의 코딩테스트 완벽 정복 로드맵을 참고하세요!
+
+<br />
+</div>
+
+------------------------
+
+<details>
+   <summary> <b>공지.</b> 🙏 감사합니다. </summary>
 
 <div align=center>
   <img src="https://github.com/brave-people/brave-tech-interview/blob/main/_raw/uv.png?raw=true" width="70%"/>
@@ -27,9 +47,7 @@ Brave Tech Interview는 매주 국내 IT기업 면접문제 및 실리콘 벨리
 PR 및 리뷰 환영합니다 :)
 
 </div>
-<br />
-<br />
-<br />
+</details>
 
 ------------------------
 
