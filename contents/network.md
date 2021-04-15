@@ -204,6 +204,9 @@ Source. [Link](https://www.popit.kr/%EB%82%98%EB%A7%8C-%EB%AA%A8%EB%A5%B4%EA%B3%
 
 ### DNS에 대해서 설명하세요.
 
+<details>
+   <summary> 예비 답안 보기 (👈 Click)</summary>
+<br />
 > 네트워크 통신을 위해서는 ip 주소가 필요하다. 인터넷 내의 모든 네트워크 장치 및 서버에는 이 ip주소가 할당되어 있다. 때문에 특정 서버로 데이터 요청을 하기 위해서는 ip주소가 필요하다.
 
 일반적으로 ip 주소는 xxx.xxx.xxx.xxx 형식으로 이루어진 IPv4 형식을 많이 사용한다.
@@ -235,6 +238,7 @@ DNS 서버는 이 goo네임서버로 google.com 의 정확한 IP 주소를 쿼�
 
 ---
 
+</details>
 <br />
 
 ---
