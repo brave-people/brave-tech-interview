@@ -15,8 +15,7 @@
 <br />
 
 <a href="https://github.com/brave-people/brave-tech-interview/blob/main/original/fe_%ED%9B%84%EA%B8%B0.md"><img src="./_raw/banner-1.png" /></a>
-<a href="https://github.com/brave-people/brave-tech-interview/blob/main/original/%EC%BD%94%ED%85%8C%EB%8A%90%EB%82%8C.md"><img src="./_raw/banner-2.png" /></a>
-
+<a href="https://github.com/brave-people/Dev-Event"><img src="./_raw/dev-event.png" /></a>
 > 이미지를 클릭해주세요!
 
 <br />
