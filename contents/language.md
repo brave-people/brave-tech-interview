@@ -358,6 +358,8 @@ Error, Exception은 Throwable class의 subclass이지만 다음과 같은 차이
 
 <br />
 
+![error vs exception](../_raw/error_exception.png)
+
 - Checked Exception: 실행하기 전에 예측 가능한 SQLException, FileNotFoundException
 - Unchecked Exception: 어플리케이션 동작시 발생하는 ArrayIndexOutOfBoundException, NullPointerException
 
