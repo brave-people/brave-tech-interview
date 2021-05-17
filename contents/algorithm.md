@@ -245,6 +245,8 @@ a[1] + a[0] = "510"
 
 <br />
 
+-----------------------
+
 ### map, hashmap, set에 대해서 설명하세요
 
 <details>
@@ -252,6 +254,80 @@ a[1] + a[0] = "510"
 <br />
 
 - [Link](https://gompangs.tistory.com/entry/HashMap-%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC?category=537219)
+
+</details>
+
+-----------------------
+
+<br />
+
+-----------------------
+
+`선택 정렬`, `꼬리물기 최적화`
+
+### 배열 A의 최대값을 구하세요.
+
+<details>
+   <summary> 예비 답안 보기 (👈 Click)</summary>
+<br />
+
+### 1. 배열 A의 최대값
+
+__시간복잡도:__ O(n), __공간 복잡도:__ O(1)
+
+```python
+import sys
+
+def find_largest_number_in_array(A):
+    ans = -sys.maxsize
+    for number in A:
+        if number > ans:
+            ans = number
+    return ans
+```
+
+<br />
+
+### 2. 배열 A의 최대값과 최솟값을 구하시오
+
+__시간복잡도:__ O(n), __공간 복잡도:__ O(1)
+
+```python
+def find_small_and_largest_number_in_array(A):
+    _max, _min = -sys.maxsize, sys.maxsize
+    for number in A:
+        if number > _max:
+            _max = number
+        elif number < _min:
+            _min = number
+    return _max, _min
+```
+
+<br />
+
+### 3. 위의 풀이보다 빠른 방법을 찾으세요.
+
+__시간복잡도:__ O(n), __공간 복잡도:__ O(1)
+
+```python
+def optimization_find_small_and_largest_number_in_array(A):
+    _max = _min= A[0]
+
+    for idx in range(0, len(A), 2):
+        first = A[idx]
+        second = A[idx + 1]
+        if first < second:
+            if first < _min: _min = first
+            if second > _max: _max = second
+        else:
+            if second < _min: _min = second
+            if first > _max: _max = first
+    return _max, _min
+```
+*배열의 갯수가 홀수인 경우 index out of range exception이 발생하므로 Padding 값을 하나 추가하면 됩니다.
+
+<img src="../_raw/algo-select.png" />
+
 
 </details>
 
