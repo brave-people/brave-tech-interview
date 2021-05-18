@@ -326,8 +326,7 @@ def optimization_find_small_and_largest_number_in_array(A):
 ```
 *배열의 갯수가 홀수인 경우 index out of range exception이 발생하므로 Padding 값을 하나 추가하면 됩니다.
 
-<img src="../_raw/algo-select.png" />
-
+<img src="../_raw/algo-select-v2.png" />
 
 </details>
 
