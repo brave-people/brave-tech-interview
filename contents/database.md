@@ -173,50 +173,58 @@ NO-SQL이란 Not Only SQL의 약자로써 기존 SQL에 비해서 특정 기능�
    <summary> 예비 답안 보기 (👈 Click) </summary>
 <br />
 
-트랜잭션은
+**트랜잭션의 정의는**
 ```
 데이터베이스의 상태를 변화시키는 일의 단위입니다.
 ```
 <br />
 
+**추가적으로**
+
 - 위의 정의와 같이, select하고 update하는 모든 쿼리문은 각각이 트랜잭션입니다.
 
 - (위에서 이미 설명되었지만) 트랜잭션을 보장하기 위해서는 ACID조건을 만족해야 합니다.
 
-- 트랜잭션의 끝은 
-   1) commit : DB에 값이 반영된다.
-   2) rollback : DB에 값이 반영되지 않는다.
+- 트랜잭션은 둘 중 하나로 종료됩니다.
+   1. commit : DB에 값이 반영된다.
+   2. rollback : DB에 값이 반영되지 않는다.
 
-cf) MySQL은 쿼리문을 실행하면 자동 커밋이되는 Auto Commit 기능을 제공하고 있습니다.
+<br />
 
-따라서 하나 이상의 쿼리문이 트랜잭션으로 실행되어야 하는 경우, 다음과 같이 트랜잭션을 명시해야 합니다.
+**사용법은**
 
 ```sql
-start transaction;
+START TRANSACTION;
 
 -- 각종 쿼리문 --
 
-commit;
+COMMIT;
 ```
 
-cf) `start transaction` 은 `begin` 명령어로 대체 가능합니다.
+cf) `START TRANSACTION` 은 `BEGIN` 명령어로 대체 가능합니다.
 
-cf) commit 자리에 rollback 명령어가 들어가면, '각종 쿼리문' 은 DB에 반영되지 않습니다.
+cf) `COMMIT` 자리에 `ROLLBACK` 명령어가 들어가면, '각종 쿼리문' 은 DB에 반영되지 않습니다.
 
 cf) 주의 : 데이터베이스 생성/삭제, 테이블 생성/삭제/수정 과 같은 DDL문은 rollback되지 않습니다.
 참고 : https://dev.mysql.com/doc/refman/8.0/en/cannot-roll-back.html
 
-cf) MySQL Auto Commit 설정
+cf) MySQL은 쿼리문을 실행하면 자동 커밋이되는 Auto Commit 기능을 제공하고 있습니다.
+(따라서 하나 이상의 쿼리문이 트랜잭션으로 실행되어야 하는 경우, 트랜잭션을 명시해야 합니다.)
 ```sql
 set autocommit = 0; -- Auto Commit 비활성화
 set autocommit = 1; -- Auto Commit 활성화
 ```
 
+
 <br />
 
-끝으로, 트랜잭션 중일 때는 다른 트랜잭션이 개입될 수 없는데, 개입의 정도를 설정할 수가 있습니다.
+**끝으로** 
 
-이를 `Isolation level of transaction` 이라고 하는데, 다른 문제로 만나요.
+트랜잭션 중일 때는 다른 트랜잭션이 개입될 수 있을까요?
+다른 트랜잭션이 개입될 때 문제가 되는건 write 때문이니 read는 상관이 없겠다는 생각이 바로 듭니다.
+
+이렇게 다른 트랜잭션이 개입할 수 있는 수준을 
+`Isolation level of transaction` 이라고 하는데, 자세한 설명은 다른 문제로 만나요~~!
 
 
 
