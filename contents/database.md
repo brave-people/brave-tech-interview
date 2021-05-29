@@ -183,7 +183,7 @@ NO-SQL이란 Not Only SQL의 약자로써 기존 SQL에 비해서 특정 기능�
 
 - 위의 정의와 같이, select하고 update하는 모든 쿼리문은 각각이 트랜잭션입니다.
 
-- (위에서 이미 설명되었지만) 트랜잭션을 보장하기 위해서는 ACID조건을 만족해야 합니다.
+- (이미 설명되었지만) 트랜잭션을 보장하기 위해서는 ACID조건을 만족해야 합니다.
 
 - 트랜잭션은 둘 중 하나로 종료됩니다.
    1. commit : DB에 값이 반영된다.
@@ -206,11 +206,14 @@ cf) `START TRANSACTION` 은 `BEGIN` 명령어로 대체 가능합니다.
 cf) `COMMIT` 자리에 `ROLLBACK` 명령어가 들어가면, '각종 쿼리문' 은 DB에 반영되지 않습니다.
 
 cf) 주의 : 데이터베이스 생성/삭제, 테이블 생성/삭제/수정 과 같은 DDL문은 rollback되지 않습니다.
+
 참고 : https://dev.mysql.com/doc/refman/8.0/en/cannot-roll-back.html
 
 cf) MySQL은 쿼리문을 실행하면 자동 커밋이되는 Auto Commit 기능을 제공하고 있습니다.
+
 (따라서 하나 이상의 쿼리문이 트랜잭션으로 실행되어야 하는 경우, 트랜잭션을 명시해야 합니다.)
 ```sql
+-- 설정하는 방법
 set autocommit = 0; -- Auto Commit 비활성화
 set autocommit = 1; -- Auto Commit 활성화
 ```
@@ -221,9 +224,13 @@ set autocommit = 1; -- Auto Commit 활성화
 **끝으로** 
 
 트랜잭션 중일 때는 다른 트랜잭션이 개입될 수 있을까요?
+
 다른 트랜잭션이 개입될 때 문제가 되는건 write 때문이니 read는 상관이 없겠다는 생각이 바로 듭니다.
 
+<br />
+
 이렇게 다른 트랜잭션이 개입할 수 있는 수준을 
+
 `Isolation level of transaction` 이라고 하는데, 자세한 설명은 다른 문제로 만나요~~!
 
 
