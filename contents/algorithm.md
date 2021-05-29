@@ -332,6 +332,10 @@ def optimization_find_small_and_largest_number_in_array(A):
 
 -----------------------
 
+<br />
+
+-----------------------
+
 `완전탐색`, `꼬리물기 최적화`
 
 ### 배열 A에서 중복되는 원소 찾는 알고리즘을 최적화해보세요.
@@ -406,12 +410,15 @@ def negation(A):
 
 <br />
 
-![check dup elements](../_raw/algorithm/check_dup.png)
+![check dup elements](../_raw/algorithm/check_dup_2.png)
 
-- `A = [3, 2, 1, 1, 4]`를 예시로 보겠습니다. 
+- `A = [3, 1, 0, 1, 4]`를 예시로 보겠습니다. 
 - Step1. `A[abs(A[i])]`가 음수가 아니므로 `A[A[i]]`를 음수로 바꿉니다.
 - Step2. `A[abs(A[i])]`가 음수가 아니므로 `A[A[i]]`를 음수로 바꿉니다.
-- Step3. `A[abs(A[i])]`가 음수이므로 중복 원소가 배열에 존재합니다.
+- Step3. `A[abs(A[i])]`가 음수가 아니므로 `A[A[i]]`를 음수로 바꿉니다.
+- Step4. `A[abs(A[i])]`가 음수이므로 중복 원소가 배열에 존재합니다.
+
+이 방법은 0 ~ n-1 범위일 경우에만 가능합니다. n 이상의 숫자가 배열에 있을 경우 Out of range 예외가 발생합니다.
 
 <br />
 </details>
