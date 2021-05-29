@@ -399,7 +399,6 @@ def hash(A):
 > 시간복잡도: O(n) 공간복잡도: O(1)
 ```python
 def negation(A):
-    A.sort()
     for i in range(len(A)):
         if A[abs(A[i])] < 0:
             print("Duplicates exist", abs(A[i]))
