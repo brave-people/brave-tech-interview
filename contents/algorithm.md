@@ -505,7 +505,7 @@ def find_missing_number_hashing(A):
 def find_missing_number_summation_formula(A):
     N = len(A)
 
-    total_sum = (N + 1) * N // 2
+    total_sum = (N + 1) * (N + 2) // 2
     curr_sum = sum(A)
 
     if total_sum - curr_sum != 0:
@@ -521,9 +521,9 @@ def find_missing_number_summation_formula(A):
 def find_missing_number_xor(A):
     N = len(A)
     X1 = A[0]
-    X2 = 1
+    X2 = 0
 
-    for i in range(0, N):
+    for i in range(1, N):
         X1 = X1 ^ A[i]
     for cur in range(1, N+2):
         X2 = X2 ^ cur
