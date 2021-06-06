@@ -245,6 +245,8 @@ a[1] + a[0] = "510"
 
 <br />
 
+-----------------------
+
 ### map, hashmap, set에 대해서 설명하세요
 
 <details>
@@ -253,6 +255,284 @@ a[1] + a[0] = "510"
 
 - [Link](https://gompangs.tistory.com/entry/HashMap-%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC?category=537219)
 
+</details>
+
+-----------------------
+
+<br />
+
+-----------------------
+
+`선택 알고리즘`, `꼬리물기 최적화`
+
+### 배열 A의 최대값을 구하세요.
+
+<details>
+   <summary> 예비 답안 보기 (👈 Click)</summary>
+<br />
+
+### 1. 배열 A의 최대값
+
+__시간복잡도:__ O(n), __공간 복잡도:__ O(1)
+
+```python
+import sys
+
+def find_largest_number_in_array(A):
+    ans = -sys.maxsize
+    for number in A:
+        if number > ans:
+            ans = number
+    return ans
+```
+
+<br />
+
+### 2. 배열 A의 최대값과 최솟값을 구하시오
+
+__시간복잡도:__ O(n), __공간 복잡도:__ O(1)
+
+```python
+def find_small_and_largest_number_in_array(A):
+    _max, _min = -sys.maxsize, sys.maxsize
+    for number in A:
+        if number > _max:
+            _max = number
+        elif number < _min:
+            _min = number
+    return _max, _min
+```
+
+<br />
+
+### 3. 위의 풀이보다 빠른 방법을 찾으세요.
+
+__시간복잡도:__ O(n), __공간 복잡도:__ O(1)
+
+```python
+def optimization_find_small_and_largest_number_in_array(A):
+    _max = _min= A[0]
+
+    for idx in range(0, len(A), 2):
+        first = A[idx]
+        second = A[idx + 1]
+        if first < second:
+            if first < _min: _min = first
+            if second > _max: _max = second
+        else:
+            if second < _min: _min = second
+            if first > _max: _max = first
+    return _max, _min
+```
+*배열의 갯수가 홀수인 경우 index out of range exception이 발생하므로 Padding 값을 하나 추가하면 됩니다.
+
+<img src="../_raw/algo-select-v2.png" />
+
+</details>
+
+-----------------------
+
+<br />
+
+-----------------------
+
+`완전탐색`, `꼬리물기 최적화`
+
+### 배열 A에서 중복되는 원소 찾는 알고리즘을 최적화해보세요.
+
+<details>
+   <summary> 예비 답안 보기 (👈 Click)</summary>
+<br />
+
+
+### 풀이 1. 브루트포스
+> 시간복잡도: O(n^2) 공간복잡도: O(1)
+
+```python
+def bruteforce(A):
+    for i in range(len(A)):
+        for j in range(i + 1, len(A)):
+            if A[i] == A[j]:
+                print("Duplicates exist: " + str(A[i]))
+                return
+    print("No duplicates in given array")
+```
+
+<br />
+
+### 풀이 2. 정렬
+풀이 1을 최적화. 정렬을 하면 바로 옆의 원소와 비교하면 되기에 탐색 시간을 줄일 수 있습니다.
+> 시간복잡도: O(nlogn) 공간복잡도: O(1)
+
+```python
+def sorting(A):
+    A.sort()
+    for i in range(len(A)-1):
+        if A[i] == A[i+1]:
+            print("Duplicates exist: " + str(A[i]))
+            return
+    print("No duplicates in given array")
+```
+
+<br />
+
+### 풀이 3. 해쉬
+`set()`에 저장하면 수를 넣기 전에 `set()`에 값이 있는지 검사할 때의 시간 복잡도는 O(1)입니다. 정렬보다 시간복잡도를 줄일 수 있습니다.
+> 시간복잡도: O(n) 공간복잡도: O(n)
+```python
+def hash(A):
+    tmp = set()
+    for i in A:
+        if i in tmp:
+            print("Duplicates exist: " + str(i))
+            return
+        tmp.add(i)
+    print("No duplicates in given array")
+```
+
+<br />
+
+
+### 풀이 4. negation 전략
+- 풀이 3 해쉬에서 최악의 경우 모든 원소를 저장해야하기에 공간복잡도 n입니다.
+- 공간 복잡도를 O(1)로 줄일 수 있는 생소하지만 어렵지 않은 알고리즘을 소개하겠습니다.
+> 시간복잡도: O(n) 공간복잡도: O(1)
+```python
+def negation(A):
+    for i in range(len(A)):
+        if A[abs(A[i])] < 0:
+            print("Duplicates exist", abs(A[i]))
+            return
+        A[A[i]] = -A[A[i]]
+    print("No duplicates in given array")
+```
+
+<br />
+
+![check dup elements](../_raw/algorithm/check_dup_2.png)
+
+- `A = [3, 1, 0, 1, 4]`를 예시로 보겠습니다. 
+- Step1. `A[abs(A[i])]`가 음수가 아니므로 `A[A[i]]`를 음수로 바꿉니다.
+- Step2. `A[abs(A[i])]`가 음수가 아니므로 `A[A[i]]`를 음수로 바꿉니다.
+- Step3. `A[abs(A[i])]`가 음수가 아니므로 `A[A[i]]`를 음수로 바꿉니다.
+- Step4. `A[abs(A[i])]`가 음수이므로 중복 원소가 배열에 존재합니다.
+
+이 방법은 0 ~ n-1 범위일 경우에만 가능합니다. n 이상의 숫자가 배열에 있을 경우 Out of range 예외가 발생합니다.
+
+<br />
+</details>
+
+-----------------------
+
+<br />
+
+-----------------------
+
+`완전탐색`, `꼬리물기 최적화`
+
+### 배열에 빠진 수를 찾으세요.
+
+<details>
+   <summary> 예비 답안 보기 (👈 Click)</summary>
+<br />
+
+### 문제
+
+> 서로 다른 [1, n]범위의 n-1개의 숫자가 들어있는 리스트가 주어집니다. 주어진 배열에 빠진 수를 찾으세요.
+
+- 유사 문제: [LeetCode. Missing Number](https://leetcode.com/problems/missing-number/), [백준 1920. 수 찾기](https://www.acmicpc.net/problem/1920)
+
+<br />
+
+> 본 문제에 대한 상세 해설은 [covenant.tistory.com/245](https://covenant.tistory.com/245)에서 볼 수 있습니다.
+
+<br />
+
+### 풀이 1. 완전탐색
+> 시간복잡도: O(n^2) 공간복잡도: O(1)
+```python
+def find_missing_number_bruteforce(A):
+    N = len(A)
+
+    for cur in range(1, N+1):
+        flag = False
+        for a in A:
+            if cur == a:
+                flag = True; break
+
+        if flag is False:
+            print("Missing number is " + str(cur))
+            break
+```
+
+<br />
+
+
+### 풀이 2. 정렬
+> 시간복잡도: O(nlogn) 공간복잡도: O(1)
+
+```python
+def find_missing_number_sort(A):
+    A.sort()
+    for cur in range(1, len(A)+1):
+        if cur not in A:
+            print("Missing number is " + str(cur))
+            break
+```
+
+<br />
+
+
+### 풀이 3. 해슁
+> 시간복잡도: O(n) 공간복잡도: O(n)
+
+```python
+def find_missing_number_hashing(A):
+    A = set(A)
+
+    for cur in range(1, len(A)+1):
+        if cur not in A:
+            print("Missing number is " + str(cur))
+            break
+```
+
+<br />
+
+### 풀이 4. 총합 공식(summation formula)
+> 시간복잡도: O(n) 공간복잡도: O(1)
+
+```python
+def find_missing_number_summation_formula(A):
+    N = len(A)
+
+    total_sum = (N + 1) * (N + 2) // 2
+    curr_sum = sum(A)
+
+    if total_sum - curr_sum != 0:
+        print("Missing number is " + str(abs(total_sum - curr_sum)))
+```
+
+<br />
+
+### 풀이 5. XOR
+> 시간복잡도: O(n) 공간복잡도: O(1)
+
+```python
+def find_missing_number_xor(A):
+    N = len(A)
+    X1 = A[0]
+    X2 = 0
+
+    for i in range(1, N):
+        X1 = X1 ^ A[i]
+    for cur in range(1, N+2):
+        X2 = X2 ^ cur
+
+    print("Missing number is " + str(X1 ^ X2))
+```
+
+<br />
+<br />
 </details>
 
 -----------------------
