@@ -297,11 +297,231 @@ cf) <a href="https://soooprmx.com/archives/11330" target='_blank'>언어를 스�
 <br />
 <br />
 
-### interface와 abstract에 대해서 설명하세요.
+----------------------------------------
 
+### [Java] Exception, Error의 차이에 대해서 설명하세요.
+
+<details>
+   <summary> 예비 답안 보기 (👈 Click)</summary>
+<br />
+<br />
+
+Error, Exception은 Throwable class의 subclass이지만 다음과 같은 차이가 있습니다.
+
+<br />
+
+<table>
+<thead>
+<tr>
+   <td> ⠀ </td>
+   <td> Error </td>
+   <td> Exception </td>  
+</tr>
+</thead>
+<tbody>
+<tr>
+    <tr>
+      <th> 패키지 </th>
+      <td> java.lang.error	 </td>
+      <td> java.lang.exception </td>
+   </tr>
+      <th> 발생 시점 </th>
+      <td> 런타임에서 발생. 컴파일 시점에서 에러가 발생할지 알 수 없다.  </td>
+      <td> 
+       Checked Exception은 컴파일 시점에 알 수 있다. Unchecked Exception은 런타임에서만 알 수 있다.
+      </td>
+   <tr>
+      <th> 복구 </th>
+      <td> 에러는 복구가 불가능 </td>
+      <td> 
+         try cactch 블락을 이용하여 복구 가능
+      </td>
+   </tr>
+   <tr>
+      <th> 타입 </th>
+      <td> 모든 예외는 Unchecked Type  </td>
+      <td> 
+        Checked Type, Unchecked Type으로 분류
+      </td>
+   </tr>
+   <tr>
+      <th> 예시 </th>
+      <td> OutOfMemory, StackOverFlow </td>
+      <td> 
+         Checked Exception: NoSuchMethod, ClassNotFound <br /> 
+         Unchecked Exception: NullPointer, IndexOutOfBounds
+      </td>
+   </tr>
+</tr>
+</tbody>
+</table>
+
+<br />
+
+![error vs exception](../_raw/error_exception.png)
+
+- Checked Exception: 실행하기 전에 예측 가능한 SQLException, FileNotFoundException
+- Unchecked Exception: 어플리케이션 동작시 발생하는 ArrayIndexOutOfBoundException, NullPointerException
+
+</details>
+
+----------------------------------------
+
+<br />
+<br />
+
+----------------------------------------
+
+### interface와 abstract에 대해서 설명하세요. - 1편
+
+<details>
+   <summary>예비 답안 보기 (👈 Click)</summary>
+<br />
+
+**가장 큰 차이점은**
+
+인터페이스는 그 인터페이스를 구현하는 모든 구현체들은 인터페이스가 정의해둔 같은 기능을 구현하도록 강제 함에 있어 사용하며
+
+추상클래스는 상속받는 클래스들의 공통적인 로직을 추상화시키고, 자식클래스들이 부모클래스를 확장시키기위해 사용합니다.
+
+------
+
+**어떻게 활용?**
+
+```java
+interface Remocon {
+ public void on();
+  public void off();
+  public void upChannel();
+  public void downChannel();
+}
+public class LGSmartRemocon implements Remocon {
+  public void on() { 전원 켜짐 구현 }
+  public void off() { 전원 켜짐 구현 }
+  public void upChannel() { 채널 증가 구현 } 
+  public void downChannel() { 채널 감소 구현 }
+}
+public class SamsungSmartRemocon implements Remocon {
+  public void on() { 전원 켜짐 구현 }
+  public void off() { 전원 켜짐 구현 }
+  public void upChannel() { 채널 증가 구현 } 
+  public void downChannel() { 채널 감소 구현 }
+}
 ```
 
-```
+정부에서 리모콘의 스팩은 무조건 채널 전원켬, 끔, 채널 증가, 채널 감소가 있어야 전파인증을 내준다고 생각해 봅시다. 그러면 LG, Samsung은 Remocon 인터페이스를 만들고 무조건 채널 전원켬, 끔, 채널 증가, 채널 감소를 만들어야 할 것입니다.
+
+추상클래스 예제는 https://velog.io/@foeverna/Java-추상클래스-예제 이게 제일 좋네요!
+
+------
+
+**속성**
+
+1. 추상클래스는 **다중 상속이 불가하지만**, 인터페이스는 **다중 상속이 가능**하다.
+2. 추상클래스는 **상태와 행위**를 가지지만, 인터페이스는 **행위**만 가진다.
+
+인터페이스는 다중상속이 되고, 정의된 모든 행위를 구현해야하고요.
+
+2의 이유 때문에 interface는 static, final 변수만 가능할 것입니다.
+
+------
+
+**DI로 본 스프링과 인터페이스 이야기**
+
+- 스프링의 개념인 DI 에는 인터페이스를 주로 사용합니다.
+- 스프링은 DI 를 하기 위해, Bean Factory 기능을 확장하여 IoC 컨테이너인 Application Context 가 `싱글톤 레지스트리` 를 사용하고 있기 떄문입니다.
+- 싱글톤 레지스트리를 통해서 수 만개의 요청이 동시에 들어왔을 때 각 요청마다 새로운 객체 생성이 아닌 단일 객체를 사용하게 됩니다.
+- DI에 추상클래스를 사용한다면, DI 를 하는 대상이 상태 를 가지기 때문에 멀티 쓰레드 환경에서 Thread safe 하지 않게 됩니다.
+
+
+
+</details>
+
+----------------------------------------
+
+<br />
+<br />
+
+----------------------------------------
+
+### interface와 abstract에 대해서 설명하세요. - 2편
+
+<details>
+   <summary>예비 답안 보기 (👈 Click)</summary>
+<br />
+
+#### **1) interface**
+
+1. 무엇인가? 
+
+   : 추상 메서드, static, final 변수만 사용할 수 있는 객체로 생성이 되는 선언들의 집합이다.
+
+2. 왜 쓰는가?
+
+   : 다중 상속을 가능하게 해준다.
+   
+   cf) 제언 : **C++은 다중 상속이 가능하나 Java는 기본적으로 단일 상속만 허용한다. 하지만 인터페이스를 사용한다면 다중 상속을 할 수 있다.**
+
+   : 상속받는 클래스는 추상 클래스의 메서드 또는 변수가 있음을 보장한다.
+
+3. 어떻게 쓰나?
+
+   ```java
+   // 선언
+   public interface Person{
+   public static final String name = "홍길동";    // 변수 선언 (public, static, final 생략해도 자동)
+   public void eat();                           // 메서드 선언
+   }
+   // 사용
+   public class Student implements Person{
+   public void study(){            // 메서드 선언
+      // some code here 
+   }
+   public void eat(){              // 오버라이딩
+      // some code here 
+   }
+   
+   }
+   ```
+
+<br />
+
+#### **2) abstract**
+
+1. 무엇인가?
+
+   : 자체로는 객체 생성이 되지 않는, 상속을 받아 사용하는 클래스이다.
+
+2. 왜 쓰는가?
+
+   : 추상 클래스는 일반 메서드를 구현할 수 있기 때문에 추상 클래스를 상속하는 클래스의 경우 추상클래스의 일반 메서드를 사용할 수 있다. 따라서 공통적으로 구현해야 하는 메소드의 경우 추상클래스의 일반 메소드에 구현하여 DRY 원칙을 지킬 수 있다.
+   
+   : 상속받는 클래스는 추상 클래스의 메서드 또는 변수가 있음을 보장한다.
+   
+   : non-static, non-final 변수를 사용할 수 있어 객체의 상태를 수정할 수 있다.
+
+3. 어떻게 쓰나?
+
+   ```java
+   // 선언
+   public abstract class Person{
+   public abstract void eat();  // 추상 메서드
+   public void work(){	         // 일반 메서드
+      // some code here 
+   }
+   }
+   // 상속
+   public class Student extends Person{
+   public void eat(){           // 오버라이딩
+      
+   }
+   }
+   ```
+
+
+</details>
+
+----------------------------------------
 
 <br />
 <br />
