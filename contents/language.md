@@ -528,7 +528,7 @@ public class SamsungSmartRemocon implements Remocon {
 
 ----------------------------------------
 
-### C++, Java에서 다중상속을 지원하지 않는 이유는 무엇인가요.
+### Java에서 다중상속을 지원하지 않는 이유는 무엇인가요.
 
 <details>
    <summary>예비 답안 보기 (👈 Click)</summary>
@@ -539,7 +539,7 @@ public class SamsungSmartRemocon implements Remocon {
 </p>
 
 - C++에서는 한 클래스에서 직간접적으로 하나 이상의 클래스를 상속할 수 있으며 이를 __다중상속__ 이라 한다.
-- 그러 나두 부모 클래스(House, Office)가 한 클래스로(Place)부터 파생된 클래스인 경우 다중상속을 쓰면 애매한 상황이 발생한다. 
+- 그러나 두 부모 클래스(House, Office)가 한 클래스로(Place)부터 파생된 클래스인 경우 다중상속을 쓰면 애매한 상황이 발생한다. 
    1. 상속받은 House, Office 클래스에 같은 이름의 멤버가 존재할 가능성
    2. 하나의 클래스(Place)를 간접적으로 두 번 이상 상속받을 가능성이 있습니다.
    3. 가상 클래스가 아닌 기초 클래스를 다중 상속하면, 기초 클래스 타입의 포인터로 파생 클래스를 가리킬 수 없음
