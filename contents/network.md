@@ -205,13 +205,44 @@ Source. [Link](https://www.popit.kr/%EB%82%98%EB%A7%8C-%EB%AA%A8%EB%A5%B4%EA%B3%
    
    <br />    
 
-**심화 질문**
+### **심화 질문**
    
 Q. 만약 로드 밸런싱을 사용하고 있는 웹서버의 경우에는 세션을 어떻게 관리할까요?
 (사용자가 어떤 웹서버에 붙느냐에 따라 세션 정보를 다시 저장해야 할까요?)   
 
-스티키 세션을 이용합니다. 로드 밸런서가 쿠키가 없는 요청이라면 쿠키 값을 등록하고 웹서버를 지정합니다. 그 다음 요청의 경우, 기존 웹서버로만 포워딩을 해줍니다.
-cf) https://docs.aws.amazon.com/elasticloadbalancing/latest/application/sticky-sessions.html
+**1) 스티키 세션** (Sticky Session)
+
+- 로드 밸런서가 쿠키가 없는 요청이라면 쿠키 값을 등록하고 웹서버를 지정한다.
+- 쿠키가 있다면 해당 요청이 쿠키에 지정된 서버로 보낸다.
+
+**단점**
+
+- 로드밸런싱이 잘 동작하지 않을 수 있다.
+- 고정된 세션을 사용하기에 특정 서버만 과부하가 올 수 있다.
+- 특정 서버 Fail시 해당 서버에 붙어 있는 세션들이 소실될 수 있다.
+
+<br />
+   
+**2) 세션 클러스터링** (Session Clustering)
+
+- 클러스터링은 여러 대의 컴퓨터들이 연결되어 하나의 시스템처럼 동작하도록 만드는 것이다.
+- 즉, 각 서버의 세션에 모든 세션 저장소의 세션 객체를 복제한다.
+
+**단점**
+
+- 매번 세션 객체를 복제하는데 오버헤드가 발생한다.
+
+<br />   
+   
+**3) 세션 스토리지 분리** (별도의 세션 저장소 사용 - Redis, MongoDB, DynamoDB..)
+
+- 별도의 세션 저장소를 사용한다. 세션 저장소가 하나이기에 세션을 서버간 복제를 할 필요가 없다.
+- 서버가 아무리 늘어난다 해도 세션 스토리지에 대한 정보만 각각의 서버에 입력해주면 세션을 공유할 수 있다. 또한, 트래픽이 몰리는 현상을 고려하지 않아도 된다.
+- 하나의 서버가 장애가 발생해도 별도의 세션 저장소가 존재하기 때문에 서비스를 계속 제공할 수 있다. (가용성 확보)
+
+cf) [https://docs.aws.amazon.com/elasticloadbalancing/latest/application/sticky-sessions.html](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/sticky-sessions.html)
+
+cf) [https://hyuntaeknote.tistory.com/6](https://hyuntaeknote.tistory.com/6)
    
 </details>
 
