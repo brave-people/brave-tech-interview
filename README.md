@@ -105,9 +105,8 @@ PR 및 리뷰 환영합니다 :)
 <br />
 
 ## PART 2. 용감한 당신을 위한 선물
-### [1. 면접 전 체크리스트](./contents/before30mins.md)
-### [2. 코딩테스트 후기](./contents/codingTest.md)
-### [3. 머리 식히기 위한 글](./contents/source.md)
+### [1. 코딩테스트 후기](./contents/codingTest.md)
+### [2. 머리 식히기 위한 글](./contents/source.md)
 
 
 <br />
