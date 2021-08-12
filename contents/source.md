@@ -12,6 +12,7 @@
 - [Trello/ 면접준비](https://trello.com/b/MugMXwGi/%EB%A9%B4%EC%A0%91%EC%A4%80%EB%B9%84%F0%9F%91%91)
 - [ksundong / backend-interview-question](https://github.com/ksundong/backend-interview-question)
 - [Kirchhoff-/ Android-Interview-Questions](https://github.com/Kirchhoff-/Android-Interview-Questions)
+- [boostcamp-ai-tech-4 / ai-tech-interview](https://github.com/boostcamp-ai-tech-4/ai-tech-interview)
 
 <br />
 
