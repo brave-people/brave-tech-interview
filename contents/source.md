@@ -13,6 +13,11 @@
 - [ksundong / backend-interview-question](https://github.com/ksundong/backend-interview-question)
 - [Kirchhoff-/ Android-Interview-Questions](https://github.com/Kirchhoff-/Android-Interview-Questions)
 - [boostcamp-ai-tech-4 / ai-tech-interview](https://github.com/boostcamp-ai-tech-4/ai-tech-interview)
+- [web-development-encyclopedia](https://github.com/parker1609/web-development-encyclopedia)
+- [Back-end-Developer-Interview-Questions](https://github.com/NESOY/Back-end-Developer-Interview-Questions)
+- [jwasham / coding-interview-university](https://github.com/jwasham/coding-interview-university)
+- [ClintJang / ios-swift-objc-questions-and-answers](https://github.com/ClintJang/ios-swift-objc-questions-and-answers)
+
 
 <br />
 

@@ -11,12 +11,14 @@
 현직자가 국내 IT기업부터 실리콘벨리 기술면접 문제를 해설해드립니다.
 
 </div>
-<br />
+
+<!-- <br />
 <br />
 
 <a href="https://github.com/brave-people/brave-tech-interview/blob/main/original/fe_%ED%9B%84%EA%B8%B0.md"><img src="./_raw/banner-1.png" /></a>
 <a href="https://github.com/brave-people/Dev-Event"><img src="./_raw/dev-event.png" /></a>
-> 이미지를 클릭해주세요!
+> 이미지를 클릭해주세요! 
+-->
 
 <br />
 <br />
@@ -105,9 +107,8 @@ PR 및 리뷰 환영합니다 :)
 <br />
 
 ## PART 2. 용감한 당신을 위한 선물
-### [1. 면접 전 체크리스트](./contents/before30mins.md)
-### [2. 코딩테스트 후기](./contents/codingTest.md)
-### [3. 머리 식히기 위한 글](./contents/source.md)
+### [1. 코딩테스트 후기](./contents/codingTest.md)
+### [2. 머리 식히기 위한 글](./contents/source.md)
 
 
 <br />
